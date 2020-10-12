@@ -5,30 +5,28 @@
  */
 package tools;
 
-import entity.Book;
+import entity.History;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author pupil
  */
-public class BookSaver {
-    private String fileName = "books";
+public class HistorySaver {
+    private String fileName = "histories";
 
-    public void saveBooks(Book[] books) {
+    public void saveHistories(History[] histories) {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
             fos = new FileOutputStream(fileName);
             oos = new ObjectOutputStream(fos);
-            oos.writeObject(books);
+            oos.writeObject(histories);
             oos.flush();
         } catch (FileNotFoundException ex) {
             System.out.println("Не найден файл");
@@ -37,13 +35,13 @@ public class BookSaver {
         }
     }
 
-    public Book[] loadFile() {
+    public History[] loadFile() {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
         try {
             fis = new FileInputStream(fileName);
             ois = new ObjectInputStream(fis);
-            return (Book[]) ois.readObject();
+            return (History[]) ois.readObject();
         } catch (FileNotFoundException ex) {
             System.out.println("Не найден файл");
         } catch (IOException ex) {
@@ -51,7 +49,7 @@ public class BookSaver {
         } catch (ClassNotFoundException ex) {
             System.out.println("Ошибка: не найден класс");
         }
-        return new Book[100];
+        return new History[100];
     }
     
 }

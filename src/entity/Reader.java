@@ -1,27 +1,36 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package entity;
 
 import java.io.Serializable;
 
-public class Reader implements Serializable {
-    private String firstname;
+/**
+ *
+ * @author pupil
+ */
+public class Reader implements Serializable{
+    private String name;
     private String lastname;
     private String phone;
 
     public Reader() {
     }
 
-    public Reader(String firstname, String lastname, String phone) {
-        this.firstname = firstname;
+    public Reader(String name, String lastname, String phone) {
+        this.name = name;
         this.lastname = lastname;
         this.phone = phone;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getLastname() {
@@ -42,8 +51,16 @@ public class Reader implements Serializable {
 
     @Override
     public String toString() {
-        return "Имя: " + firstname
-                + ", Фамилия: " + lastname
-                + ", Телефон: " + phone;
+        return "Reader{" 
+                + "name=" + name 
+                + ", lastname=" + lastname 
+                + ", phone=" + phone 
+                + '}';
     }
+
+    public void setFirstname(String nextLine) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+      
+            
 }

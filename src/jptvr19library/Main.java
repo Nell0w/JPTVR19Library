@@ -1,4 +1,4 @@
-package com.company;
+package jptvr19library;
 
 public class Main {
 
